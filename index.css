@@ -1,0 +1,35 @@
+.flexAround{
+    display: flex;
+    justify-content: space-around;
+}
+.boxGauche{
+    width: 30%;
+}
+.boxDroite{
+    width: 60%;
+}
+body{
+    font-size: larger;
+    background-color: #CBD7E4;
+    margin: 4%;
+    font-size: x-large;
+  }
+a {
+    text-decoration: none;
+    background-color: rgba(210, 105, 30, 0.721);
+    color: black;
+    margin: 1%;
+    padding: 2%;
+    border-radius: 10px;
+  }
+  h1{
+    font-family: cursive;
+    font-style: italic;
+    font-size: 4em;
+    margin-left: 4%;
+  }
+  h2{
+    font-family: cursive;
+    font-style: italic;
+    
+  }
