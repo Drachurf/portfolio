@@ -5,7 +5,7 @@
         <Slide class="flexColumn" v-for="slide in slides" :key="slide.id">
           <img class="carousel__item" :src="slide.imageSrc" alt="Slide {{ slide.id }}" />
           <legend class="flexColumn"> {{ slide.legendImage }} 
-            <a v-if="slide.link" :href="slide.link">Cliquez ici pour accéder au site en ligne</a>
+            <a v-if="slide.link" :href="slide.link" target="_blank">Cliquez ici pour accéder au site en ligne</a>
           </legend>  
         </Slide>
         
@@ -46,7 +46,7 @@ export default {
           legendImage: "Bookie : exercice OpenClassRooms, reproduire en Html et Css un design depuis une maquette figma.", 
           link: 'https://drachurf.github.io/p2/',},
         { id: 4, imageSrc: image4, legendImage: "Portfolio de Nina Carducci : exercice OpenClassRooms. Optimisation SEO d'un site web.", 
-          link: 'https://drachurf.github.io/p5/', },
+          link: 'https://drachurf.github.io/P5/', },
         { id: 5, imageSrc: image5, legendImage: "Kasa : exercice OpenClassRooms. A partir du maquette figma, reproduire un site web en React",
           link: 'https://drachurf.github.io/p6/', },
         { id: 6, imageSrc: image6, legendImage: "Mon vieux grimoire : exercice OpenClassRooms. Réalisation d'un backend avec Nodejs et Mongodb",
@@ -77,5 +77,9 @@ a{
   text-decoration: none;
   color : rgba(210, 105, 30, 0.721) ;
 }
-
+@media screen and (max-width: 767px){
+ .carousel__item{
+  width: 95%;
+ }
+}
 </style>

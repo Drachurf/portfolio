@@ -1,9 +1,9 @@
 <template>
-    <TheHeader />
-    <TheNav />
-    <TheCarousselle />
-    <TheLanguage/>
-    <TheFooter />
+  <TheHeader />
+  <TheNav />
+  <TheCarousselle />
+  <TheLanguage/>
+  <TheFooter />
 </template>
 
 
@@ -16,13 +16,13 @@ import TheLanguage from './components/TheLanguage.vue';
 
 
 export default {
-  name: 'App',
-  components: {
-    TheHeader,
-    TheNav,
-    TheFooter,
-    TheCarousselle,
-    TheLanguage,
+name: 'App',
+components: {
+  TheHeader,
+  TheNav,
+  TheFooter,
+  TheCarousselle,
+  TheLanguage,
 }
 }
 </script>
