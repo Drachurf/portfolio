@@ -6,6 +6,7 @@
 import "leaflet/dist/leaflet.css";
 import L from 'leaflet';
 
+import imgNewYork from "../assets/images/marker/newyork.webp"
 import imgMongolie from "../assets/images/marker/mongolie.webp";
 import imgMoscou from "../assets/images/marker/moscou.webp";
 import imgRoumanie from "../assets/images/marker/roumanie.webp";
@@ -20,7 +21,8 @@ import imgCroatie from "../assets/images/marker/croatie.webp";
 import imgLisbonne from "../assets/images/marker/lisbonne.webp"
 import imgStPet from "../assets/images/marker/stpet.webp";
 import imgCardiff from "../assets/images/marker/cardiff.webp";
-import logoMarker from '../assets/logo/location-dot-solid.svg'
+import logoMarker from '../assets/logo/location-dot-solid.svg';
+
 
 export default {
   name: "LeafletMapView",
@@ -53,7 +55,7 @@ export default {
      */
      addMarkers() {
   const cities = [
-    { name: "New York", location: [40.7128, -74.0060], image: "" },
+    { name: "New York", location: [40.7128, -74.0060], image: imgNewYork },
     { name: "Oulan-Bator", location: [47.9188, 106.9170], image: imgMongolie },
     { name: "Moscou", location: [55.7558, 37.6176], image: imgMoscou },
     { name: "Roumanie", location: [45.9432, 24.9668], image: imgRoumanie },
