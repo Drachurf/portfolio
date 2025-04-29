@@ -1,9 +1,10 @@
 <template>
   <div class="head">
+    <img src="../assets/images/artNumThomas.webp" alt="Logo de Thomas">
     <h1>
-      Thomas
+      Thomas Fruchard 
     </h1>
-    <img src="../assets/images/logoT2F.webp" alt="Logo de Thomas">
+    
   </div>
 </template>
 
@@ -15,7 +16,7 @@
 .head {
   display: flex;
   margin-bottom: 3%;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 img {

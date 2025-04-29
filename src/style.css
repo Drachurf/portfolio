@@ -10,9 +10,7 @@
 }
 body{
   font-size: larger;
-  background-color: #CBD7E4;
   margin: 4%;
-  font-size: x-large;
 }
 
 h1{
@@ -21,8 +19,9 @@ h1{
   font-size: 4em;
   margin-left: 4%;
 }
-h2{
-  font-family: cursive;
-  font-style: italic;
-  
+hr{
+  border: none;
+  height: 2px;
+  background-color: #e1a23f;
+  margin: 1em 0;
 }

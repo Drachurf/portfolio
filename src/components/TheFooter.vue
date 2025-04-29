@@ -16,6 +16,7 @@ footer{
     width: 100%;
     left: 0;
     position: absolute;
+    color: #e1a23f;
 }
 
 </style>

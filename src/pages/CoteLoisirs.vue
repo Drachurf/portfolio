@@ -1,12 +1,19 @@
 <template>
+  <h4> Le sport </h4>
+  <p>Je pratique le sport depuis l'âge de 4 ans. J'ai commencé par le rugby, que j'ai pratiqué pendant une vingtaine d'années. J'ai également pratiqué le basketball, un sport dans lequel j'ai connu le haut niveau, jouant pour les équipes départementales puis régionales de mon secteur. J'ai même réussi à décrocher le titre de champion de France lors de mes années minimes.</p>
+  <p>Depuis, je continue à pratiquer le sport, mais je suis surtout un bénévole engagé auprès des associations dans lesquelles je suis actif. Lorsque je jouais au rugby à Pessac, j'étais trésorier de mon association. Actuellement basketteur à Biscarrosse, je suis responsable de la partie partenariats du club.</p>
+  <h4> Les voyages </h4>
+  <div class="boxmap">
   <div id="l-container"></div>
+  </div>
+  <p class="legende"> A chaque marqueur une image de l'un de mes voyages </p>
 </template>
 
 <script>
 import "leaflet/dist/leaflet.css";
 import L from 'leaflet';
 
-import imgNewYork from "../assets/images/marker/newyork.webp"
+import imgNewYork from "../assets/images/marker/newyork.webp";
 import imgMongolie from "../assets/images/marker/mongolie.webp";
 import imgMoscou from "../assets/images/marker/moscou.webp";
 import imgRoumanie from "../assets/images/marker/roumanie.webp";
@@ -21,6 +28,8 @@ import imgCroatie from "../assets/images/marker/croatie.webp";
 import imgLisbonne from "../assets/images/marker/lisbonne.webp"
 import imgStPet from "../assets/images/marker/stpet.webp";
 import imgCardiff from "../assets/images/marker/cardiff.webp";
+import imgStEul from '../assets/images/marker/steEule.webp';
+import imgAthenes from '../assets/images/marker/Athenes.webp';
 import logoMarker from '../assets/logo/location-dot-solid.svg';
 
 
@@ -44,7 +53,8 @@ export default {
     setupLeafletMap(mapcenter, mapzoom) {
       let initmap = L.map("l-container").setView(mapcenter, mapzoom);
       L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        maxZoom: 20,
+        maxZoom: 5,
+        minZoom: 2.8,
         attribution: '&copy; Openstreetmap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(initmap);
       return initmap;
@@ -69,7 +79,9 @@ export default {
     { name: "Croatie", location: [45.1000, 15.2000], image: imgCroatie },
     { name: "Lisbonne", location: [38.7223, -9.1393], image: imgLisbonne },
     { name: "Saint-Pétersbourg", location: [59.9343, 30.3351], image: imgStPet },
-    { name: "Cardiff", location: [51.4816, -3.1791], image: imgCardiff }
+    { name: "Cardiff", location: [51.4816, -3.1791], image: imgCardiff },
+    { name: "Sainte Eulalie En Born", location: [44.308019,  -1.181046], image: imgStEul },
+    {name: "Athenes", location: [37.9838, 23.7275], image: imgAthenes}
   ];
 
   const defaultIcon = L.icon({
@@ -104,5 +116,21 @@ export default {
 <style scoped>
 #l-container {
   height: 500px;
+  width: 90%;
+}
+.legende{
+font-style: italic;
+font-size: medium;
+}
+.boxmap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 767px) {
+  #l-container {
+  height: 500px;
+  width: 80%;
+}
 }
 </style>

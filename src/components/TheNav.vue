@@ -1,69 +1,103 @@
 <template>
-    <div class="boxnav">
-      <nav>
-        <a href="#" @click="showComponent('CoteProfessionnel')">Côté professionnel</a>
-        <a href="#" @click="showComponent('CoteEtudiant')">Côté étudiant</a>
-        <a href="#" @click="showComponent('CoteLoisirs')">Côté loisirs</a>
-      </nav>
+  <div class="boxnav">
+    <nav>
+      <a href="#" :class="{ active: currentComponent === 'CoteProfessionnel' }"
+        @click.prevent="showComponent('CoteProfessionnel')"> Expériences professionnelles</a>
+      <a href="#" :class="{ active: currentComponent === 'CoteEtudiant' }"
+        @click.prevent="showComponent('CoteEtudiant')">Formations</a>
+      <a href="#" :class="{ active: currentComponent === 'Realisation' }"
+        @click.prevent="showComponent('Realisation')">Mes réalisations</a>
+      <a href="#" :class="{ active: currentComponent === 'SoftKills' }" @click.prevent="showComponent('SoftKills')">Soft
+        Kills</a>
+      <a href="#" :class="{ active: currentComponent === 'CoteLoisirs' }"
+        @click.prevent="showComponent('CoteLoisirs')">Loisirs</a>
+
+    </nav>
   </div>
-      <CoteProfessionnel v-if="currentComponent === 'CoteProfessionnel'" />
-      <CoteEtudiant v-if="currentComponent === 'CoteEtudiant'" />
-      <CoteLoisirs v-if="currentComponent === 'CoteLoisirs'" />
-  </template>
-  
-  <script>
-  import CoteProfessionnel from '../pages/CoteProfessionnel.vue';
-  import CoteEtudiant from '../pages/CoteEtudiant.vue'; 
-  import CoteLoisirs from '../pages/CoteLoisirs.vue';
-  
-  export default {
-    data() {
-      return {
-        currentComponent: '',
-      };
-    },
-    methods: {
-      showComponent(componentName) {
-        if(this.currentComponent === componentName){
-          this.currentComponent = null;
-        }else{
+  <CoteProfessionnel v-if="currentComponent === 'CoteProfessionnel'" />
+  <CoteEtudiant v-if="currentComponent === 'CoteEtudiant'" />
+  <CoteLoisirs v-if="currentComponent === 'CoteLoisirs'" />
+  <Realisation v-if="currentComponent === 'Realisation'" />
+  <SoftKills v-if="currentComponent === 'SoftKills'" />
+</template>
+
+<script>
+import CoteProfessionnel from '../pages/CoteProfessionnel.vue';
+import CoteEtudiant from '../pages/CoteEtudiant.vue';
+import CoteLoisirs from '../pages/CoteLoisirs.vue';
+import Realisation from '../pages/Realisation.vue';
+import SoftKills from '../pages/SoftKills.vue';
+
+export default {
+  data() {
+    return {
+      currentComponent: 'CoteProfessionnel',
+    };
+  },
+  mounted() {
+    const savedComponent = sessionStorage.getItem('currentComponent');
+    if (savedComponent) {
+      this.currentComponent = savedComponent;
+    }
+  },
+  methods: {
+    showComponent(componentName) {
+      if (this.currentComponent === componentName) {
+        this.currentComponent = null;
+        sessionStorage.removeItem('currentComponent');
+      } else {
         this.currentComponent = componentName;
+        sessionStorage.setItem('currentComponent', componentName);
       }
     },
-    },
-    components: {
-      CoteProfessionnel,
-      CoteEtudiant,
-      CoteLoisirs,
-    },
-  };
-  </script>
-  
-  <style scoped>
+  },
+  components: {
+    CoteProfessionnel,
+    CoteEtudiant,
+    CoteLoisirs,
+    Realisation,
+    SoftKills
+  },
+};
+</script>
+
+<style scoped>
+a.active {
+  background-color: black;
+  color: #e1a23f;
+  border: 1px solid #e1a23f;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 4%;
+}
+
+a {
+  display: flex;
+  text-decoration: none;
+  background-color: #e1a23f;
+  color: black;
+  margin: 1%;
+  padding: 1%;
+  border-radius: 10px;
+  width: 20%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+}
+
+@media screen and (max-width: 767px) {
   nav {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 4%;
+    flex-direction: column;
+    align-items: center;
   }
+
   a {
-    text-decoration: none;
-    background-color: rgba(210, 105, 30, 0.721);
-    color: black;
-    margin: 1%;
-    padding: 2%;
-    border-radius: 10px;
-    width: 20%;
-    text-align: center;
-  }
-  @media screen and (max-width: 767px){
-  nav{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  }
-  a{
-  width: 100%;
+    width: 100%;
   }
 }
-  </style>
-  
+</style>
