@@ -75,6 +75,16 @@ export default {
 
   
 <style scoped>
+.flexAround{
+  display: flex;
+  justify-content: space-around;
+}
+.boxGauche{
+  width: 30%;
+}
+.boxDroite{
+  width: 60%;
+}
 h3{
   margin-top: 20px;
   width: 100%;

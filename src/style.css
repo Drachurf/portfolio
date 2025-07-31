@@ -1,13 +1,3 @@
-.flexAround{
-  display: flex;
-  justify-content: space-around;
-}
-.boxGauche{
-  width: 30%;
-}
-.boxDroite{
-  width: 60%;
-}
 body{
   font-size: larger;
   margin: 4%;
