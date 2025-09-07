@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import CoteProfessionnel from '../pages/CoteProfessionnel.vue';
 import CoteEtudiant from '../pages/CoteEtudiant.vue';
 import CoteLoisirs from '../pages/CoteLoisirs.vue';
+import CoteProfessionnel from '../pages/CoteProfessionnel.vue';
 import Realisation from '../pages/Realisation.vue';
 import SoftKills from '../pages/SoftKills.vue';
 
@@ -62,6 +62,10 @@ export default {
 </script>
 
 <style scoped>
+.boxnav{
+  display: flex; 
+  justify-content: center;
+}
 a.active {
   background-color: black;
   color: #e1a23f;
@@ -69,8 +73,9 @@ a.active {
 }
 
 nav {
+  width: 80%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 4%;
 }
 
@@ -79,10 +84,10 @@ a {
   text-decoration: none;
   background-color: #e1a23f;
   color: black;
-  margin: 1%;
+
   padding: 1%;
   border-radius: 10px;
-  width: 20%;
+  width: 17%;
   text-align: center;
   align-items: center;
   justify-content: center;

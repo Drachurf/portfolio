@@ -1,6 +1,6 @@
 <template>
     <hr>
-    <h2>Outils utilisés : </h2>
+    <h2>Hard Skills : </h2>
     <div class="boxlanguage">
         <button @click="toggleLangage">
             <img src="../assets/logo/python.svg" alt="Logo Python">
@@ -68,7 +68,6 @@
 </template>
 
 <script>
-
 export default {
     data() {
         return {

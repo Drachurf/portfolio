@@ -1,6 +1,7 @@
 <template>
       <h3>Cliquez sur une expérience à gauche pour plus de détail</h3>
       <hr>
+      <div class="thebox">
   <div class="flexAround">
     <div class="boxGauche">
       <h4 @click="toggleExp('CEAPC')" :class="{ 'active': activeExp === 'CEAPC' }">2024 - 2025 Data Analyst <br>DAI Caisse d'Epargne</h4>
@@ -54,11 +55,10 @@
 
     </div>
   </div>
+  </div>
 </template>
   
 <script>
-
-
 export default {
   data() {
     return {
@@ -75,9 +75,14 @@ export default {
 
   
 <style scoped>
+.thebox{
+    display: flex;
+    justify-content: center;
+}
 .flexAround{
   display: flex;
   justify-content: space-around;
+  width: 80%;
 }
 .boxGauche{
   width: 30%;
